@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Record Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Student Record Management System</h1>
+    <p>C++ backend &middot; HTML/CSS/JavaScript frontend</p>
+  </header>
+
+  <main>
+    <!-- Summary cards: filled by script.js from /api/stats -->
+    <section class="stats">
+      <div class="stat-card"><span class="stat-label">Total Students</span><span class="stat-value" id="statCount">0</span></div>
+      <div class="stat-card"><span class="stat-label">Average Marks</span><span class="stat-value" id="statAverage">0.00</span></div>
+      <div class="stat-card"><span class="stat-label">Topper</span><span class="stat-value small" id="statTopper">-</span></div>
+    </section>
+
+    <div class="layout">
+      <!-- Add / Update form -->
+      <section class="card">
+        <h2 id="formTitle">Add Student</h2>
+        <form id="studentForm" autocomplete="off">
+          <label for="rollNo">Roll Number</label>
+          <input type="number" id="rollNo" min="1000000" max="9999999" placeholder="7-digit roll number" required>
+
+          <label for="name">Name</label>
+          <input type="text" id="name" maxlength="50" required>
+
+          <label for="course">Course</label>
+          <input type="text" id="course" maxlength="50" required>
+
+          <label for="marks">Marks (0 - 100)</label>
+          <input type="number" id="marks" min="0" max="100" step="0.01" required>
+
+          <div class="button-row">
+            <button type="submit" id="submitBtn" class="btn primary">Add Student</button>
+            <button type="button" id="cancelBtn" class="btn hidden">Cancel</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Records table -->
+      <section class="card">
+        <h2>Student Records</h2>
+        <div class="toolbar">
+          <input type="number" id="searchRoll" placeholder="Search by roll number" min="1000000" max="9999999">
+          <button id="searchBtn" class="btn">Search</button>
+          <button id="showAllBtn" class="btn">Show All</button>
+          <button id="sortBtn" class="btn primary">Sort by Marks</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Roll No</th><th>Name</th><th>Course</th><th>Marks</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+        <p id="emptyMessage" class="empty hidden">No records found.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="script.js"></script>
+</body>
+</html>

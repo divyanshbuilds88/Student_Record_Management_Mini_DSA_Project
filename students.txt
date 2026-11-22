@@ -1,0 +1,6 @@
+2546101|Aarav Sharma|B.Tech CSE|88.5
+2546102|Priya Singh|B.Tech CSE|92
+2546103|Rohan Verma|B.Tech IT|76.25
+2546104|Neha Gupta|B.Tech ECE|85
+2546105|Karan Mehta|B.Tech CSE|67.5
+2546113|Divyansh Kumar|B.Tech CSE|100
