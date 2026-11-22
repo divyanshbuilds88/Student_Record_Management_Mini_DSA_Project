@@ -467,6 +467,6 @@ Check that you started the program from inside the project folder, so it can fin
 
 ## Author
 
-Your Name - DSA Mini Project
+Divyansh Kumar - DSA Mini Project
 
 *Built to learn and practise Data Structures and Algorithms in C++.*
